@@ -1,0 +1,110 @@
+ubuntu-platform-api (0.15-0phablet1) quantal; urgency=low
+
+  * Correct selection of next focused application
+  * Mark keyboard as invisible when switching apps to prevent the trap
+  * Correctly update current apps list even if all remaining apps are system sessions
+
+ -- Ricardo Mendoza <ricardo.mendoza@canonical.com>  Wed, 20 Feb 2013 16:48:08 -0430
+
+ubuntu-platform-api (0.14-0phablet1) quantal; urgency=low
+
+  * Packaging improvements for the public release
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Wed, 20 Feb 2013 15:49:21 -0300
+
+ubuntu-platform-api (0.13) quantal; urgency=low
+
+  * Add method to signal App Manager clients for changes on OSK geometry/visibility
+  * Prevent attempting to focus sessions from session-less surfaces
+
+ -- Ricardo Mendoza <ricardo.mendoza@canonical.com>  Wed, 20 Feb 2013 02:42:09 -0430
+
+ubuntu-platform-api (0.12) quantal; urgency=low
+
+  * Focus a new application only when the application requests visibility for its surfaces
+
+ -- Ricardo Mendoza <ricardo.mendoza@canonical.com>  Wed, 20 Feb 2013 02:05:14 -0430
+
+ubuntu-platform-api (0.11) quantal; urgency=low
+
+  [ Ricardo Mendoza ]
+  * Correctly report fullscreen session for mainstage apps if requested
+  * Dont schedule a system session app (osk) for focusing when recovering from a binder death
+  * Keep track of apps in independent pointers and better protect session binders.
+
+ -- Florian Boucault <florian.boucault@canonical.com>  Wed, 20 Feb 2013 02:46:09 +0000
+
+ubuntu-platform-api (0.10) quantal; urgency=low
+
+  [Thomas Voss]
+  * fix compilation for c programs 
+
+ -- Bill Filler <bill.filler@canonical.com>  Sat, 16 Feb 2013 23:09:26 -0500
+
+ubuntu-platform-api (0.9) quantal; urgency=low
+
+  [ Ricardo Mendoza ]
+  * Track sidestage/mainstage app running states and adjust transitions accordingly
+  * Input layer changes to deal with new behaviour
+  * Do dynamic screenshots according to surface size with correctly scaled geometry
+  * General cleanup and stability fixes
+
+  [ Ricardo Salveti ]
+  * Removing logic to kill applications using the volume down key
+
+ -- Ricardo Mendoza <ricardo.mendoza@canonical.com>  Thu, 14 Feb 2013 11:19:18 -0430
+
+ubuntu-platform-api (0.8) quantal; urgency=low
+
+  [ Ricardo Mendoza ]
+  * Add API support for the dynamic creation and dismissal of system-session input traps with variable geometry.
+
+ -- Florian Boucault <florian.boucault@canonical.com>  Wed, 13 Feb 2013 23:56:45 +0000
+
+ubuntu-platform-api (0.7) quantal; urgency=low
+
+  * debian/control: changing to arch any as libhybris is now available for
+    x86 64
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Sun, 10 Feb 2013 23:57:21 -0200
+
+ubuntu-platform-api (0.6) quantal; urgency=low
+
+  [ Thomas Voss ]
+  * Add fullscreen observer and callback for the app manager.
+
+  [ Ricardo Mendoza ]
+  * Release upstream
+
+ -- Ricardo Mendoza <ricardo.mendoza@canonical.com>  Thu, 07 Feb 2013 19:44:18 -0430
+
+ubuntu-platform-api (0.5) quantal; urgency=low
+
+  * Add support for copy and paste (Clipboard service)
+
+ -- Ricardo Mendoza <ricardo.mendoza@canonical.com>  Wed, 06 Feb 2013 21:06:53 -0430
+
+ubuntu-platform-api (0.4) quantal; urgency=low
+
+  * Enabling packages for i386 (useful from a package dependency perspective).
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Wed, 06 Feb 2013 20:08:58 -0200
+
+ubuntu-platform-api (0.3) quantal; urgency=low
+
+  * Creating a common libubuntu-platform-api-dev package, to avoid people to
+    depend on implementation specific packages (for that we have provides).
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Wed, 06 Feb 2013 19:14:05 -0200
+
+ubuntu-platform-api (0.2) quantal; urgency=low
+
+  * Updating packages to be multi-arch compatible
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Tue, 05 Feb 2013 21:01:10 -0200
+
+ubuntu-platform-api (0.1) quantal; urgency=low
+
+  * Initial Release
+
+ -- Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>  Tue, 05 Feb 2013 14:15:40 -0200

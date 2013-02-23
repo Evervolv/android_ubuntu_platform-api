@@ -1,0 +1,65 @@
+Source: ubuntu-platform-api
+Priority: extra
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends:
+ debhelper (>= 9),
+ cmake,
+ libhybris-dev,
+ libgles2-mesa-dev
+Standards-Version: 3.9.4
+Section: devel
+Vcs-Bzr: lp:phablet-platform
+Vcs-Browser: https://bazaar.launchpad.net/~phablet-team/phablet-platform/files
+
+Package: ubuntu-platform-api-headers
+Section: libdevel
+Architecture: any
+Depends:
+ ${misc:Depends}
+Description: Ubuntu Platform API -- library headers
+ This package provides the library headers for the Ubuntu Platform API.
+ .
+ Unless you are developing a new backend for the Ubuntu Platform API, you
+ probably want libubuntu-platform-api-dev instead, which will pull this
+ package automatically.
+
+Package: libubuntu-platform-api1-dev
+Section: libdevel
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ubuntu-platform-api-headers (= ${source:Version}),
+ ubuntu-platform-implementation-android | libubuntu-platform-api1,
+ libgles2-mesa-dev
+Description: Ubuntu Platform API -- development headers
+ This package provides the development headers for the Ubuntu Platform API.
+
+Package: ubuntu-platform-implementation-android
+Provides: libubuntu-platform-api1
+Conflicts: libubuntu-platform-api1
+Replaces: libubuntu-platform-api1
+Section: libs
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ libhybris
+Description: Android implementation of the Ubuntu Platform API -- runtime
+ This package provides the android implementation of the Ubuntu Platform API.
+ .
+ The produced library should be used via libhybris, to communicate with the
+ Android userspace, which is where the Ubuntu Application Manager lives.
+
+Package: ubuntu-platform-implementation-android-tests
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ ubuntu-platform-implementation-android (= ${binary:Version})
+Description: Android implementation of the Ubuntu Platform API -- tests
+ This package provides the test cases for the android implementation
+ of the Ubuntu Platform API.
